@@ -1,3 +1,56 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix {
+  &:before, &:after {
+    height:0;
+    display:block;
+    overflow:hidden;
+    content:'\999999';
+  }
+  &:after {
+    clear:both;
+  }
+}
+
+.style {
+  width:960px;
+  margin:0 auto;
+  font-family:sans-serif;
+}
+
+#header {
+  @extend.clearfix;
+  @extend.style;
+  padding:10px 0;
+  text-align:center;
+  background-color:#56789A;
+  a {
+    text-decoration:none;
+    font-size:40px;
+    color:#FFFFFF;
+  }
+}
+
+#section {
+  @extend.clearfix;
+  @extend.style;
+  .main {
+    float:left;
+    width:600px;
+    padding:50px;
+  }
+  .rail {
+    float:right;
+    width:200px;
+    padding:30px;
+  }
+}
+
+#footer {
+  @extend.clearfix;
+  @extend.style;
+  text-align:center;
+  color:#56789A;
+}

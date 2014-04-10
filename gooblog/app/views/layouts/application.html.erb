@@ -8,7 +8,17 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="header">
+  <%= link_to 'gooblog', posts_path %>
+</div>
+
+<div id="section">
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <address>gooblog</address>
+</div>
 
 </body>
 </html>
