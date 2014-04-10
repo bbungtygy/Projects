@@ -1,1 +1,25 @@
 <h1>_form.html.erb</h1>
+
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h1><%= pluralize(@post.errors.count, "error") %> occur.</h1>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label '제목' %>
+  <%= f.text_field :title %><br>
+  <%= f.label '내용' %>
+  <%= f.text_area :content %><br>
+  <%= f.label '이미지' %>
+  <%= f.file_field :asset %><br>
+  <% if @post.asset? %>
+    <%= image_tag @post.asset.url(:thumb)%><br>
+  <% end %>
+  <%= f.submit %>
+<% end %>

@@ -1,5 +1,13 @@
 <div class="main">
   <h1>index.html.erb</h1>
+
+  <% @posts.each do |post| %>
+    <% if post.asset? %>
+      <%= image_tag post.asset.url(:thumb) %>
+    <% end %>
+    <%= link_to post.title, post%>
+    <%= link_to post.content, post %><br>
+  <% end %>
 </div>
 
 <div class="rail">

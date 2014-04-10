@@ -40,6 +40,9 @@
     float:left;
     width:600px;
     padding:50px;
+    #error_explanation {
+      color:#FF0000;
+    }
   }
   .rail {
     float:right;
