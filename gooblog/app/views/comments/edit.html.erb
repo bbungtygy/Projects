@@ -1,0 +1,9 @@
+<h1>edit.html.erb</h1>
+
+<%= form_for @comment do |f| %>
+  <%= f.label '제목' %>
+  <%= f.text_field :commenter %><br>
+  <%= f.label '내용' %>
+  <%= f.text_area :content %><br>
+  <%= f.submit %>
+<% end %>

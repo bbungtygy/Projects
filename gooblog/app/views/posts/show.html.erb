@@ -10,6 +10,10 @@
   <%= link_to '수정', edit_post_path(@post) %>
   <%= link_to '삭제', post_path(@post), method: :delete, data: { confirm: '삭제하시겠습니까?' } %>
   <%= link_to '목록', posts_path %>
+  <br>
+  <br>
+  <%= render partial: 'comments/comment', collection: @post.comments %>
+  <%= render 'comments/form' %>
 </div>
 
 <div class="rail">
