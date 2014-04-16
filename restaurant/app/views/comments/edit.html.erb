@@ -1,0 +1,15 @@
+<h1>comments/edit.html.erb</h1>
+
+<%= form_for @comment do |f| %>
+  <%= f.label :commenter %>
+  <%= f.text_field :commenter %>
+  <br>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.label :rating %>
+  <%#= f.number_field :rating, step: 0.5 %>
+  <br>
+  <%= f.submit%>
+<% end %>
+

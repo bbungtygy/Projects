@@ -1,0 +1,96 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+    height: 0;
+    display: block;
+    overflow: hidden;
+    content: "\999999";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.style {
+  width: 1000px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+#header {
+  @extend .clearfix;
+  @extend .style;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #FF6789;
+  a {
+    text-decoration: none;
+    font-size: 40px;
+    color: #FFFFFF;
+  }
+}
+
+#menubar {
+  @extend .clearfix;
+  @extend .style;
+  padding: 10px 0;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #FF6789;
+  }
+}
+
+#section {
+  @extend .clearfix;
+  @extend .style;
+  .main {
+    width: 900px;
+    padding: 50px;
+    background-color: #FFCDEF;
+    form {
+      .field {
+        label {
+          float: left;
+          width: 200px;
+          text-align: center;
+        }
+        input {
+        }
+      }
+      .actions {
+        text-align: center;
+      }
+    }
+    ul.posts {
+      li.post {
+      }
+    }
+    .post {
+      padding: 10px 0;
+      .basic_info {
+      }
+    }
+    .paginate {
+      text-align: center;
+    }
+    .actions {
+    }
+    ul.comments {
+      background-color: #FFFEDC;
+      li.comment {
+      }
+    }
+  }
+}
+
+#footer {
+  @extend .clearfix;
+  @extend .style;
+  text-align: center;
+  color: #FF6789;
+}

@@ -1,0 +1,15 @@
+<div class="main">
+  <ul class="posts">
+    <h1>shops/index.html.erb</h1>
+
+    <% @shops.each do |shop| %>
+      <li class="post">
+        <%= link_to shop.name, shop_path(shop) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="paginate">
+    <%= will_paginate @posts %>
+  </div>
+</div>

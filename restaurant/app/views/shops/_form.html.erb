@@ -1,0 +1,130 @@
+<h1>shops/_form.html.erb</h1>
+
+<%= form_for @shop do |f| %>
+  <!-- 기본정보 -->
+  <div class="field">
+    <%= f.label '상호명' %>
+    <%= f.text_field :name, class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label '전화번호' %>
+    <%= f.text_field :phone_number, class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label '장사기간' %>
+    <%= f.text_field :operate_period, class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label '영업시간(휴무일)' %>
+    <%= f.text_field :closing, class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label '셀프서비스 여부?' %>
+    <%= f.check_box :is_selfservice, class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label '체인점 여부?' %>
+    <%= f.check_box :is_franchise, class: 'text' %>
+  </div>
+
+  <br>
+  <!-- 좌석 -->
+  <div class="field">
+    <%= f.label '테이블 수' %>
+    <%= f.select :table_count, 0..100 %>
+  </div>
+  <div class="field">
+    <%= f.label '1인석 테이블 수' %>
+    <%= f.select :alone_table_count, 0..100 %>
+  </div>
+  <div class="field">
+    <%= f.label '커플석 수' %>
+    <%= f.select :couple_table_count, 0..100 %>
+  </div>
+  <div class="field">
+    <%= f.label '룸 수' %>
+    <%= f.select :room_count, 0..100 %>
+  </div>
+  <div class="field">
+    <%= f.label '신발을 벗어야 하는지?' %>
+    <%= f.check_box :is_off_shoes, class: 'text' %>
+  </div>
+
+  <br>
+  <!-- 위치 -->
+  <div class="field">
+    <%= f.label '주소' %>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label '대중교통 정보' %>
+    <%= f.text_area :public_transport_info %>
+  </div>
+  <div class="field">
+    <%= f.label '주위 랜드마크, 기타 노출정보' %>
+    <%= f.text_area :surrounding_info %>
+  </div>
+  <div class="field">
+    <%= f.label '주차 가능여부' %>
+    <%= f.check_box :do_parking %>
+  </div>
+
+  <br>
+  <!-- 결졔 -->
+  <div class="field">
+    <%= f.label '카드결제 가능여부' %>
+    <%= f.check_box :do_card_pay %>
+  </div>
+  <div class="field">
+    <%= f.label '선불여부' %>
+    <%= f.check_box :is_pre_pay %>
+  </div>
+  <div class="field">
+    <%= f.label '통신사 할인 기타 소셜커머스 여부' %>
+    <%= f.check_box :is_coupon %>
+  </div>
+
+  <br>
+  <!-- 메뉴 -->
+  <div class="field">
+    <%= f.label '후식 제공여부' %>
+    <%= f.check_box :is_dessert %>
+  </div>
+  <div class="field">
+    <%= f.label '주류 판매여부' %>
+    <%= f.check_box :do_drink %>
+  </div>
+  <div class="field">
+    <%= f.label '특별메뉴' %>
+    <%= f.check_box :is_special_menu %>
+  </div>
+
+  <br>
+  <!-- 기타 -->
+  <div class="field">
+    <%= f.label '착석까지 대기시간' %>
+    <%= f.select :queue_waited, 0..100 %>
+  </div>
+  <div class="field">
+    <%= f.label '주문 후 서빙까지 대기시간' %>
+    <%= f.select :queue_waited, 0..100 %>
+  </div>
+  <div class="field">
+    <%= f.label '무료공기밥 여부' %>
+    <%= f.check_box :is_rice_free %>
+  </div>
+  <div class="field">
+    <%= f.label '포장여부' %>
+    <%= f.check_box :is_takeout %>
+  </div>
+
+  <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :upload %>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+<% end %>

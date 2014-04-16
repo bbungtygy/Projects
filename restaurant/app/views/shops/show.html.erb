@@ -1,0 +1,59 @@
+<div class="main">
+  <h1>shops/show.html.erb</h1>
+
+  <div class="post">
+    <div class="basic_info">
+      <%= @shop.name %>
+      <%= @shop.phone_number %>
+      <%= @shop.operate_period %>
+      <%= @shop.closing %>
+      <%= @shop.is_selfservice %>
+      <%= @shop.is_franchise %>
+    </div>
+    <div class="table_info">
+      <%= @shop.table_count %>
+      <%= @shop.alone_table_count %>
+      <%= @shop.couple_table_count %>
+      <%= @shop.room_count %>
+      <%= @shop.is_off_shoes %>
+    </div>
+    <div class="location_info">
+      <%= @shop.address %>
+      <%= @shop.public_transport_info %>
+      <%= @shop.surrounding_info %>
+      <%= @shop.do_parking %>
+    </div>
+    <div class="payment_info">
+      <%= @shop.do_card_pay %>
+      <%= @shop.is_pre_pay %>
+      <%= @shop.is_coupon %>
+    </div>
+    <div class="food_info">
+      <%= @shop.is_dessert %>
+      <%= @shop.do_drink %>
+      <%= @shop.is_special_menu %>
+    </div>
+    <div class="food_info">
+      <%= @shop.queue_waited %>
+      <%= @shop.order_waited %>
+      <%= @shop.is_rice_free %>
+      <%= @shop.is_takeout %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= link_to '수정', edit_shop_path(@shop) %>
+    <%= link_to '삭제', shop_path(@shop), method: :delete, data: { confirm: '삭제하시겠습니까?' } %>
+    <%= link_to '목록', shops_path %>
+  </div>
+
+  <ul class="comments">
+    <h1>_comment.html.erb</h1>
+    <%= render partial: 'comments/comment', collection: @shop.comments %>
+  </ul>
+
+  <div class="form">
+    <h1>_form.html.erb</h1>
+    <%= render 'comments/form' %>
+  </div>
+</div>
