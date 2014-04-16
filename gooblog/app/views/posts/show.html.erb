@@ -13,7 +13,10 @@
   <br>
   <br>
   <%= render partial: 'comments/comment', collection: @post.comments %>
-  <%= render 'comments/form' %>
+
+  <div class="comments" id="comments">
+    <%= render 'comments/form' %>
+  </div>
 </div>
 
 <div class="rail">

@@ -6,11 +6,12 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comment_params)
 
-    if @comment.save
-      redirect_to @comment.post
-    else
-      render 'new'
-    end
+    @comment.save
+#    if @comment.save
+#      redirect_to @comment.post
+#    else
+#      render 'new'
+#    end
   end
 
   def new
